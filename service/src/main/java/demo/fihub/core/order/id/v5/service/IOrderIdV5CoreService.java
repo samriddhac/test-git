@@ -5,11 +5,9 @@ import demo.fihub.core.order.id.v5.model.*;
 
 public interface IOrderIdV5CoreService {
 
-  List<Order> getReturnsByCustomerOrderId(String customerOrderId);
+  List<FlightInfo> getFlights();
 
-  List<OrderTransactions> getReturnsByOrderId(String orderId);
+  FlightInfo getFlight(long id);
 
-  Order publishReturnProcessEvent(Order Order);
-
-  Order getReturnByOrderId(String OrderId);
+  String getHealth();
 }

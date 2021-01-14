@@ -36,25 +36,19 @@ public class OrderIdV5CoreServiceControllerTest {
   @MockBean private SpanCustomizer spanCustomizer;
 
   @Test
-  public void testGetReturnsByCustomerOrderId() throws Exception {
+  public void testGetFlights() throws Exception {
 
     Assert.assertEquals(true, true);
   }
 
   @Test
-  public void testGetReturnsByOrderId() throws Exception {
+  public void testGetFlight() throws Exception {
 
     Assert.assertEquals(true, true);
   }
 
   @Test
-  public void testPublishReturnProcessEvent() throws Exception {
-
-    Assert.assertEquals(true, true);
-  }
-
-  @Test
-  public void testGetReturnByOrderId() throws Exception {
+  public void testGetHealth() throws Exception {
 
     Assert.assertEquals(true, true);
   }

@@ -32,7 +32,7 @@ import lombok.RequiredArgsConstructor;
 
 /** */
 @RestController
-@Api("returnsaggregator-service")
+@Api("flight-info-service")
 @RequiredArgsConstructor
 public class OrderIdV5CoreServiceController {
 
@@ -40,19 +40,14 @@ public class OrderIdV5CoreServiceController {
 
   /** */
   @GetMapping(
-      value = "/customerorderdetails/{customerOrderId}",
+      value = "/flights",
       consumes = {MediaType.APPLICATION_JSON_VALUE},
       produces = {MediaType.APPLICATION_JSON_VALUE})
-  @ApiOperation(
-      value = "get return orders by customerorderid",
-      tags = {"returnsaggregator"},
-      response = Order.class)
-  @ApiResponses({@ApiResponse(code = 200, message = "OK")})
-  public ResponseEntity<List<Order>> getReturnsByCustomerOrderId(
-      @ApiParam(value = "customerOrderId", required = true)
-          @PathVariable(value = "customerOrderId", required = true)
-          String customerOrderId) {
-    List<Order> data = orderIdV5CoreService.getReturnsByCustomerOrderId(customerOrderId);
+  @ApiOperation(value = "", tags = "", response = FlightInfo.class)
+  @ApiResponses({@ApiResponse(code = 200, message = "success")})
+  public ResponseEntity<List<FlightInfo>> getFlights() {
+
+    List<FlightInfo> data = orderIdV5CoreService.getFlights();
     if (data != null) {
       return new ResponseEntity<>(data, HttpStatus.OK);
     } else {
@@ -61,42 +56,14 @@ public class OrderIdV5CoreServiceController {
   }
   /** */
   @GetMapping(
-      value = "/returndetails/{orderId}",
+      value = "/flights/{id}",
       consumes = {MediaType.APPLICATION_JSON_VALUE},
       produces = {MediaType.APPLICATION_JSON_VALUE})
-  @ApiOperation(
-      value = "get return orders by orderid",
-      tags = {"returnsaggregator"},
-      response = OrderTransactions.class)
-  @ApiResponses({@ApiResponse(code = 200, message = "OK")})
-  public ResponseEntity<List<OrderTransactions>> getReturnsByOrderId(
-      @ApiParam(value = "orderId", required = true)
-          @PathVariable(value = "orderId", required = true)
-          String orderId) {
-    List<OrderTransactions> data = orderIdV5CoreService.getReturnsByOrderId(orderId);
-    if (data != null) {
-      return new ResponseEntity<>(data, HttpStatus.OK);
-    } else {
-      return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-    }
-  }
-  /** */
-  @PostMapping(
-      value = "/Order/remorsetask/invoke",
-      consumes = {MediaType.APPLICATION_JSON_VALUE},
-      produces = {MediaType.APPLICATION_JSON_VALUE})
-  @ApiOperation(
-      value = "process return post Remorse Time",
-      tags = {"returnsaggregator"},
-      response = Order.class)
-  @ApiResponses({
-    @ApiResponse(code = 200, message = "OK"),
-    @ApiResponse(code = 201, message = "Created")
-  })
-  public ResponseEntity<Order> publishReturnProcessEvent(
-      @ApiParam(value = "Order", required = true) @Validated({CreateGroup.class}) @RequestBody
-          Order Order) {
-    Order data = orderIdV5CoreService.publishReturnProcessEvent(Order);
+  @ApiOperation(value = "", tags = "", response = FlightInfo.class)
+  @ApiResponses({@ApiResponse(code = 200, message = "success")})
+  public ResponseEntity<FlightInfo> getFlight(
+      @ApiParam(value = "", required = true) @PathVariable(value = "id", required = true) long id) {
+    FlightInfo data = orderIdV5CoreService.getFlight(id);
     if (data != null) {
       return new ResponseEntity<>(data, HttpStatus.OK);
     } else {
@@ -105,19 +72,14 @@ public class OrderIdV5CoreServiceController {
   }
   /** */
   @GetMapping(
-      value = "/Order/{OrderId}",
+      value = "/health",
       consumes = {MediaType.APPLICATION_JSON_VALUE},
       produces = {MediaType.APPLICATION_JSON_VALUE})
-  @ApiOperation(
-      value = "get return order by Orderid",
-      tags = {"returnsaggregator"},
-      response = Order.class)
-  @ApiResponses({@ApiResponse(code = 200, message = "OK")})
-  public ResponseEntity<Order> getReturnByOrderId(
-      @ApiParam(value = "OrderId", required = true)
-          @PathVariable(value = "OrderId", required = true)
-          String OrderId) {
-    Order data = orderIdV5CoreService.getReturnByOrderId(OrderId);
+  @ApiOperation(value = "health route endpoint", tags = "", response = String.class)
+  @ApiResponses({@ApiResponse(code = 200, message = "success")})
+  public ResponseEntity<String> getHealth() {
+
+    String data = orderIdV5CoreService.getHealth();
     if (data != null) {
       return new ResponseEntity<>(data, HttpStatus.OK);
     } else {

@@ -11,5 +11,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @ApiModel(description = "")
 @Data
 @JsonInclude(JsonInclude.Include.NON_EMPTY)
+@Data
+@JsonInclude(JsonInclude.Include.NON_EMPTY)
 public class Order {
 }
