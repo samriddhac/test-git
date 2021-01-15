@@ -1,0 +1,35 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>demo.fihub</groupId>
+	<artifactId>order</artifactId>
+	<version>${project.version}</version>
+	<packaging>pom</packaging>
+	<name>order</name>
+	
+	<properties>
+        <project.version>1.0.0</project.version>
+        <java.version>1.8</java.version>
+		<maven.compiler.source>${java.version}</maven.compiler.source>
+		<maven.compiler.target>${java.version}</maven.compiler.target>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<sonar.exclusions>
+            	  **/dao/*.java,
+           	  **/utils/*.java,
+                  **/entity/*.java,
+            	  **/model/*.java,
+            	  **/mapper/*.java,
+            	  **/controller/*.java
+        	</sonar.exclusions>
+    </properties>    
+
+	<modules>
+		<module>service</module>
+		<module>functional-test</module>
+		<module>config</module>
+	</modules>
+	
+</project>
