@@ -39,7 +39,11 @@ public class AirV4CompositePostAircraftsStream extends AbstractStreamSubscriber
   }
 
   @Override
-  protected void invokeService(PubsubMessage message) {}
+  protected void invokeService(PubsubMessage message) {
+    Aircraft source = jsonUtils.convertFromJson(getPayload(), Aircraft.class);
+    getServiceRequestContext().setBody(source);
+    airV4CompositeService.postAircrafts(source);
+  }
 
   @Override
   protected String getTopicSubscription() {
