@@ -21,7 +21,7 @@ import javax.validation.constraints.*;
  * 
  */
 @ApiModel(description = "")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2021-01-27T19:24:37.978+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2021-01-27T19:32:30.586+05:30")
 public class Order   {
 
   @Override
