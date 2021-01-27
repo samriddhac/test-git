@@ -11,7 +11,7 @@
  */
 
 
-package demo.fihub.core.order.id.v7.model;
+package demo.fihub.core.order.id.v6.model;
 
 import java.util.Objects;
 import io.swagger.annotations.ApiModel;
@@ -21,7 +21,7 @@ import javax.validation.constraints.*;
  * 
  */
 @ApiModel(description = "")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2021-01-27T19:24:37.784+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2021-01-27T19:24:37.978+05:30")
 public class Order   {
 
   @Override

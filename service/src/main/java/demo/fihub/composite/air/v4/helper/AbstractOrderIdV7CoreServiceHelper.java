@@ -10,7 +10,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 import org.springframework.beans.factory.annotation.Value;
 
 import com.macys.order.foundation.core.utils.execution.ServiceData;
-import com.macys.order.foundation.core.utils.execution.ServiceExceutionContextUtil;
+import com.macys.order.foundation.core.utils.execution.ServiceExecutionContextUtil;
 import com.macys.order.foundation.core.utils.execution.ServiceRequestContext;
 import com.macys.order.foundation.core.utils.execution.ServiceResponseContext;
 import com.macys.order.foundation.core.utils.logging.Logger;
@@ -22,7 +22,7 @@ import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 public abstract class AbstractOrderIdV7CoreServiceHelper
-    implements IOrderIdV7CoreServiceHelper, ServiceExceutionContextUtil {
+    implements IOrderIdV7CoreServiceHelper, ServiceExecutionContextUtil {
 
   private final RestTemplate restTemplateOrderIdV7CoreService;
   private final Logger loggerOrderIdV7CoreService;
