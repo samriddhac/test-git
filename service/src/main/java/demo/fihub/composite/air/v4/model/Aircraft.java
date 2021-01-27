@@ -23,7 +23,7 @@ import javax.validation.constraints.*;
 /**
  * Aircraft
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2021-01-27T17:48:56.996+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2021-01-27T17:53:02.605+05:30")
 public class Aircraft   {
   @JsonProperty("id")
   private Long id = null;
