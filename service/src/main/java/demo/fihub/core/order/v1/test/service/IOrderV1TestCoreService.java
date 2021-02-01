@@ -7,6 +7,8 @@ public interface IOrderV1TestCoreService {
 
   List<Order> getReturnsByCustomerOrderId(String customerOrderId);
 
+  List<Order> getReturnsByCustomerBalOrderId(String customerOrderId);
+
   List<OrderTransactions> getReturnsByOrderId(String orderId);
 
   Order publishReturnProcessEvent(Order Order);

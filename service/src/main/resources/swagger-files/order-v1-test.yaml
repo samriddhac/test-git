@@ -48,6 +48,27 @@ paths:
             type: array
             items:
               $ref: '#/definitions/Order'
+  '/customerorderdetails-bal/{customerOrderId}':
+    get:
+      tags:
+        - returnsaggregator
+      summary: get return orders by customerorderid
+      operationId: getReturnsByCustomerBalOrderId
+      produces:
+        - application/json
+      parameters:
+        - name: customerOrderId
+          in: path
+          description: customerOrderId
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Order'
   '/returndetails/{orderId}':
     get:
       tags:

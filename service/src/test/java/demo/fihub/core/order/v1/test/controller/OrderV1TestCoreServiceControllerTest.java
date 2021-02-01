@@ -46,6 +46,12 @@ public class OrderV1TestCoreServiceControllerTest {
   }
 
   @Test
+  public void testGetReturnsByCustomerBalOrderId() throws Exception {
+
+    Assert.assertEquals(true, true);
+  }
+
+  @Test
   public void testGetReturnsByOrderId() throws Exception {
 
     Assert.assertEquals(true, true);

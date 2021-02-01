@@ -61,6 +61,27 @@ public class OrderV1TestCoreServiceController {
   }
   /** */
   @GetMapping(
+      value = "/customerorderdetails-bal/{customerOrderId}",
+      consumes = {MediaType.APPLICATION_JSON_VALUE},
+      produces = {MediaType.APPLICATION_JSON_VALUE})
+  @ApiOperation(
+      value = "get return orders by customerorderid",
+      tags = {"returnsaggregator"},
+      response = Order.class)
+  @ApiResponses({@ApiResponse(code = 200, message = "OK")})
+  public ResponseEntity<List<Order>> getReturnsByCustomerBalOrderId(
+      @ApiParam(value = "customerOrderId", required = true)
+          @PathVariable(value = "customerOrderId", required = true)
+          String customerOrderId) {
+    List<Order> data = orderV1TestCoreService.getReturnsByCustomerBalOrderId(customerOrderId);
+    if (data != null) {
+      return new ResponseEntity<>(data, HttpStatus.OK);
+    } else {
+      return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    }
+  }
+  /** */
+  @GetMapping(
       value = "/returndetails/{orderId}",
       consumes = {MediaType.APPLICATION_JSON_VALUE},
       produces = {MediaType.APPLICATION_JSON_VALUE})

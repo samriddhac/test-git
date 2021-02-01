@@ -1,6 +1,6 @@
 package demo.fihub.core.order.v1.test.dao.entity;
 
-// Generated 1 Feb, 2021 1:42:27 PM by Hibernate Tools 5.4.21.Final
+// Generated 1 Feb, 2021 1:45:37 PM by Hibernate Tools 5.4.21.Final
 import java.util.Date;
 import lombok.Getter;
 import lombok.Setter;
