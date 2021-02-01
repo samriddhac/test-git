@@ -1,0 +1,125 @@
+swagger: '2.0'
+produces:
+  - application/json
+consumes:
+  - application/json
+securityDefinitions:
+  Bearer:
+    in: header
+    name: Authorization
+    description: ''
+    type: apiKey
+security:
+  - Bearer: []
+basePath: /returnsaggregator
+host: 0.0.0.0
+schemes:
+  - http
+info:
+  title: returnsaggregator-service
+  version: '1.0'
+  description: This API for returnsaggregator.
+  contact:
+    name: abcd
+    url: 'http://api.abcd.com'
+    email: api@abcd.com
+  license:
+    name: Proprietary
+    url: 'http://license.abcd.com'
+paths:
+  '/customerorderdetails/{customerOrderId}':
+    get:
+      tags:
+        - returnsaggregator
+      summary: get return orders by customerorderid
+      operationId: getReturnsByCustomerOrderId
+      produces:
+        - application/json
+      parameters:
+        - name: customerOrderId
+          in: path
+          description: customerOrderId
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Order'
+  '/returndetails/{orderId}':
+    get:
+      tags:
+        - returnsaggregator
+      summary: get return orders by orderid
+      operationId: getReturnsByOrderId
+      produces:
+        - application/json
+      parameters:
+        - name: orderId
+          in: path
+          description: orderId
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/OrderTransactions'
+  /Order/remorsetask/invoke:
+    post:
+      tags:
+        - returnsaggregator
+      summary: process return post Remorse Time
+      operationId: publishReturnProcessEvent
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: Order
+          description: Order
+          required: true
+          schema:
+            $ref: '#/definitions/Order'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Order'
+        '201':
+          description: Created
+  '/Order/{OrderId}':
+    get:
+      tags:
+        - returnsaggregator
+      summary: get return order by Orderid
+      operationId: getReturnByOrderId
+      produces:
+        - application/json
+      parameters:
+        - name: OrderId
+          in: path
+          description: OrderId
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Order'
+definitions:
+  Order:
+    description: ''
+    type: object
+    properties: {}
+    x-model-class: com.abcd.uop.model.Order
+  OrderTransactions:
+    description: ''
+    type: object
+    properties: {}
+    x-model-class: com.abcd.uop.model.OrderTransactions
