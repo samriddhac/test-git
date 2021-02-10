@@ -12,7 +12,6 @@ import demo.com.framework.core.utils.message.validation.MessageValidator;
 import demo.com.framework.core.utils.msg.subscriber.AbstractStreamSubscriber;
 import demo.v33.core.releasegroup.v1.service.IReleasegroupV1CoreService;
 
-import com.abcd.uop.model.Order;
 import brave.Tracer;
 
 @Component

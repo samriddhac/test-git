@@ -5,5 +5,5 @@ import com.abcd.uop.model.Order;
 
 public interface IReleasegroupV1CoreService {
 
-  Object groupLogicalShipments(List<Order> lineItemArray);
+  List<List<Order>> groupLogicalShipments(List<Order> lineItemArray);
 }

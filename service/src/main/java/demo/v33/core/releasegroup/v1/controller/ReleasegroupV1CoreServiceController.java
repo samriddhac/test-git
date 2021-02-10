@@ -48,12 +48,12 @@ public class ReleasegroupV1CoreServiceController {
     @ApiResponse(code = 200, message = "OK"),
     @ApiResponse(code = 201, message = "Created")
   })
-  public ResponseEntity<Object> groupLogicalShipments(
+  public ResponseEntity<List<List<Order>>> groupLogicalShipments(
       @ApiParam(value = "lineItemArray", required = true)
           @Validated({CreateGroup.class})
           @RequestBody
           List<Order> lineItemArray) {
-    Object data = releasegroupV1CoreService.groupLogicalShipments(lineItemArray);
+    List<List<Order>> data = releasegroupV1CoreService.groupLogicalShipments(lineItemArray);
     if (data != null) {
       return new ResponseEntity<>(data, HttpStatus.OK);
     } else {

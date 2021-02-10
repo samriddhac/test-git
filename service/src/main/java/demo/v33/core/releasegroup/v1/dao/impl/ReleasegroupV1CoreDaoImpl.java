@@ -22,7 +22,7 @@ public class ReleasegroupV1CoreDaoImpl implements ReleasegroupV1CoreDao {
   private final SpannerTemplate spannerTemplate;
 
   @Override
-  public Object groupLogicalShipments(List<Order> lineItemArray) {
+  public List<List<Order>> groupLogicalShipments(List<Order> lineItemArray) {
     // TODO: your code goes here...
     Long id = System.nanoTime();
     spannerTemplate.insert(orderArrayToOrderArrayMapper.convertToEntity(lineItemArray));

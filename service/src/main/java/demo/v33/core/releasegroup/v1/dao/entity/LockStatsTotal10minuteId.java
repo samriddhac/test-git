@@ -1,6 +1,6 @@
 package demo.v33.core.releasegroup.v1.dao.entity;
 
-// Generated 10 Feb, 2021 5:12:54 PM by Hibernate Tools 5.4.21.Final
+// Generated 10 Feb, 2021 6:38:54 PM by Hibernate Tools 5.4.21.Final
 import java.util.Date;
 import lombok.Getter;
 import lombok.Setter;

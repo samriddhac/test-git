@@ -14,7 +14,7 @@ public class ReleasegroupV1CoreServiceImpl implements ReleasegroupV1CoreService 
   private final ReleasegroupV1CoreDao releasegroupV1CoreDao;
 
   @Override
-  public Object groupLogicalShipments(List<Order> lineItemArray) {
+  public List<List<Order>> groupLogicalShipments(List<Order> lineItemArray) {
     // HINT: your code goes here...
     return releasegroupV1CoreDao.groupLogicalShipments(lineItemArray);
   }
