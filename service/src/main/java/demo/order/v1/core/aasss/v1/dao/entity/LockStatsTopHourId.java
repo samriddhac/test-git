@@ -1,6 +1,6 @@
 package demo.order.v1.core.aasss.v1.dao.entity;
 
-// Generated 12 Feb, 2021 7:56:08 PM by Hibernate Tools 5.4.21.Final
+// Generated 12 Feb, 2021 8:07:36 PM by Hibernate Tools 5.4.21.Final
 import java.io.Serializable;
 import java.util.Arrays;
 import java.util.Date;

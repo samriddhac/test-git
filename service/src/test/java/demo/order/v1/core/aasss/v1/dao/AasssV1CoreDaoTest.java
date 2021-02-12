@@ -22,8 +22,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import demo.order.v1.core.aasss.v1.dao.config.TestConfiguration;
 
-import demo.order.v1.core.aasss.v1.dao.mapper.*;
-
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = TestConfiguration.class)
 public class AasssV1CoreDaoTest {

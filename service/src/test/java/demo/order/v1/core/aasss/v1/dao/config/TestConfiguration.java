@@ -15,6 +15,5 @@ import org.springframework.context.annotation.Configuration;
 @ComponentScan(basePackages = "demo.order.v1.core.aasss.v1.dao")
 public class TestConfiguration {
 
-  @MockBean public DoubleToDoubleMapper doubleToDoubleMapper;
   @MockBean public SpannerTemplate spannerTemplate;
 }
