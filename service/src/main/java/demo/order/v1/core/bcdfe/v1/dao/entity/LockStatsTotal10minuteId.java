@@ -1,6 +1,6 @@
 package demo.order.v1.core.bcdfe.v1.dao.entity;
 
-// Generated 12 Feb, 2021 2:46:47 PM by Hibernate Tools 5.4.21.Final
+// Generated 12 Feb, 2021 3:07:34 PM by Hibernate Tools 5.4.21.Final
 import java.util.Date;
 import lombok.Getter;
 import lombok.Setter;
